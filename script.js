@@ -1,7 +1,11 @@
+const ROCK = 'rock';
+const PAPER = 'paper';
+const SCISSORS = 'scissors';
+
 const choices = [
-  'rock',
-  'paper',
-  'scissors'
+  ROCK,
+  PAPER,
+  SCISSORS
 ];
 
 function getComputerChoice() {
@@ -11,10 +15,12 @@ function getComputerChoice() {
 function getHumanChoice() {
   let humanInput = prompt('Enter your choice: rock | paper | scissors');
 
-  if (choices.includes) {
+  if (choices.includes(humanInput)) {
     return humanInput;
   }
 }
 
 let humanScore = 0;
 let computerScore = 0;
+
+
