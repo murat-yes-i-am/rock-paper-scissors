@@ -13,7 +13,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let humanInput = prompt('Enter your choice: rock | paper | scissors');
+  let humanInput = prompt('Enter your choice: rock | paper | scissors').toLowerCase();
 
   if (choices.includes(humanInput)) {
     return humanInput;
