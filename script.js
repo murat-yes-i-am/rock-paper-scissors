@@ -13,11 +13,13 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let humanInput = prompt('Enter your choice: rock | paper | scissors').toLowerCase();
+  let humanInput;
 
-  if (choices.includes(humanInput)) {
-    return humanInput;
-  }
+  do {
+    humanInput = prompt('Enter your choice: rock | paper | scissors').toLowerCase();
+  } while (!choices.includes(humanInput));
+  
+  return humanInput;
 }
 
 function playGame() {
