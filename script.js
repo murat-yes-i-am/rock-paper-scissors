@@ -42,4 +42,17 @@ function playGame() {
         console.log("It's tie");
     }
   }
+
+  for (let round = 1; round <= 5; round++) {
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+
+    playRound(humanChoice, computerChoice);
+  }
+
+  if (humanScore > computerScore) {
+    console.log('You win');
+  } else {
+    console.log('Computer wins');
+  }
 }
