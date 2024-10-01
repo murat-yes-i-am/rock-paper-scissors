@@ -41,7 +41,7 @@ function playGame() {
         computerScore++;
         break;
       default: 
-        console.log("It's tie");
+        console.log("It's a tie");
     }
   }
 
@@ -54,8 +54,10 @@ function playGame() {
 
   if (humanScore > computerScore) {
     console.log('You win');
-  } else {
+  } else if (computerScore > humanScore) {
     console.log('Computer wins');
+  } else {
+    console.log("It's a tie")
   }
 }
 
