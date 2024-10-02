@@ -22,7 +22,7 @@ const playerScoreElement = document.querySelector('.player-score');
 const computerScoreElement = document.querySelector('.computer-score');
 const roundResultsElement = document.querySelector('.round-results');
 const gameOverElement = document.querySelector('.game-over')
-const gameResultElement = document.querySelector('.game-result');
+const gameResultElement = document.querySelector('.game-over__result');
 
 const getComputerChoice = () => choices[Math.floor(Math.random() * choices.length)];
 const getPlayerChoice = (e) => e.target.id;
