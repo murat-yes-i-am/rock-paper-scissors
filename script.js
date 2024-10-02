@@ -10,7 +10,11 @@ const choices = [
 let playerScore = 0;
 let computerScore = 0;
 
-const buttons = document.querySelectorAll('.button');
+const rockButton = document.getElementById(ROCK);
+const paperButton = document.getElementById(PAPER);
+const scissorsButton = document.getElementById(SCISSORS);
+
+const choiceButtons = [rockButton, paperButton, scissorsButton];
 const playerScoreElement = document.querySelector('.player-score');
 const computerScoreElement = document.querySelector('.computer-score');
 const resultsElement = document.querySelector('.results');
@@ -20,8 +24,8 @@ const getPlayerChoice = (e) => e.target.id;
 const updatePlayerScore = () => playerScoreElement.textContent = playerScore;
 const updateComputerScore = () => computerScoreElement.textContent = computerScore;
 const updateResultsElement = (result) => resultsElement.textContent = result;
-const disableButtons = () => buttons.forEach(button => button.disabled = true);
-const enableButtons = () => buttons.forEach(button => button.disabled = false);
+const disableButtons = () => choiceButtons.forEach(button => button.disabled = true);
+const enableButtons = () => choiceButtons.forEach(button => button.disabled = false);
 
 const playRound = (e) => {
   const computerChoice = getComputerChoice();
@@ -69,4 +73,4 @@ const reset = () => {
   enableButtons();
 }
 
-buttons.forEach(button => button.addEventListener('click', playRound));
+choiceButtons.forEach(button => button.addEventListener('click', playRound));
