@@ -28,25 +28,28 @@ const playRound = (e) => {
 
   const computerChoice = getComputerChoice();
   const humanChoice = getHumanChoice(e);
+  let result = '';
 
   switch (true) {
     case (humanChoice === ROCK && computerChoice === SCISSORS):
     case (humanChoice === PAPER && computerChoice === ROCK):
     case (humanChoice === SCISSORS && computerChoice === PAPER):
-      updateResultsElement(`You win! ${humanChoice} beats ${computerChoice}`);
+      result =`You win! ${humanChoice} beats ${computerChoice}`;
       humanScore++;
       updateHumanScore();
       break;
     case (computerChoice === ROCK && humanChoice === SCISSORS):
     case (computerChoice === PAPER && humanChoice === ROCK):
     case (computerChoice === SCISSORS && humanChoice === PAPER):
-      updateResultsElement(`You lose! ${computerChoice} beats ${humanChoice}`);
+      result = `You lose! ${computerChoice} beats ${humanChoice}`;
       computerScore++;
       updateComputerScore();
       break;
     default:
-      updateResultsElement('It\'s a tie');
+      result = 'It\'s a tie';
   }
+
+  updateResultsElement(result);
 }
 
 buttons.addEventListener('click', playRound);
