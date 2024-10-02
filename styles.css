@@ -46,3 +46,13 @@ body {
   border-radius: 5px;
   font-size: 18px;
 }
+
+.game-over {
+  display: none;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  width: 90%;
+  height: 75%;
+}
