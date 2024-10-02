@@ -33,7 +33,6 @@ const disableButtons = () => choiceButtons.forEach(button => button.disabled = t
 const enableButtons = () => choiceButtons.forEach(button => button.disabled = false);
 
 const endGame = (message) => {
-  alert(message);
   gameResultElement.textContent = message;
   disableButtons();
   gameOverElement.style.display = 'flex';
