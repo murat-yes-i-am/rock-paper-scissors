@@ -36,7 +36,7 @@ const endGame = (message) => {
   alert(message);
   gameResultElement.textContent = message;
   disableButtons();
-  gameOverElement.style.display = 'block';
+  gameOverElement.style.display = 'flex';
 }
 
 const playRound = (e) => {
