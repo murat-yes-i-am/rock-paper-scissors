@@ -10,7 +10,7 @@ const choices = [
 let playerScore = 0;
 let computerScore = 0;
 
-const buttons = document.querySelector('.buttons');
+const buttons = document.querySelectorAll('.button');
 const playerScoreElement = document.querySelector('.player-score');
 const computerScoreElement = document.querySelector('.computer-score');
 const resultsElement = document.querySelector('.results');
@@ -20,13 +20,9 @@ const getHumanChoice = (e) => e.target.id;
 const updateplayerScore = () => playerScoreElement.textContent = playerScore;
 const updateComputerScore = () => computerScoreElement.textContent = computerScore;
 const updateResultsElement = (result) => resultsElement.textContent = result;
-const disableButtons = () => {};
+const disableButtons = () => buttons.forEach(button => button.disabled = true);
 
 const playRound = (e) => {
-  if (!choices.includes(e.target.id)) {
-    return;
-  }
-
   const computerChoice = getComputerChoice();
   const humanChoice = getHumanChoice(e);
   let result = '';
@@ -63,4 +59,4 @@ const playRound = (e) => {
   }
 }
 
-buttons.addEventListener('click', playRound);
+buttons.forEach(button => button.addEventListener('click', playRound));
