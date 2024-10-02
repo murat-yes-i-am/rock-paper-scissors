@@ -45,12 +45,12 @@ function playGame() {
     }
   }
 
-  for (let round = 1; round <= 5; round++) {
-    const humanChoice = getHumanChoice();
-    const computerChoice = getComputerChoice();
+  // for (let round = 1; round <= 5; round++) {
+  //   const humanChoice = getHumanChoice();
+  //   const computerChoice = getComputerChoice();
 
-    playRound(humanChoice, computerChoice);
-  }
+  //   playRound(humanChoice, computerChoice);
+  // }
 
   if (humanScore > computerScore) {
     console.log('You win');
