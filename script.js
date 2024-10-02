@@ -22,7 +22,7 @@ const playerScoreElement = document.querySelector('.player-score');
 const computerScoreElement = document.querySelector('.computer-score');
 const resultsElement = document.querySelector('.results');
 const gameOverElement = document.querySelector('.game-over')
-const gameResultElement = document.querySelector('.game-results');
+const gameResultElement = document.querySelector('.game-result');
 
 const getComputerChoice = () => choices[Math.floor(Math.random() * choices.length)];
 const getPlayerChoice = (e) => e.target.id;
@@ -66,13 +66,11 @@ const playRound = (e) => {
   updateResultsElement(result);
 
   if (playerScore >= 5) {
-    alert('You win');
-    disableButtons();
+    endGame('You win');
   }
 
   if (computerScore >= 5) {
-    alert('You lose');
-    disableButtons();
+    endGame('You lose');
   }
 }
 
