@@ -20,7 +20,7 @@ const resetButton = document.getElementById(RESET);
 const choiceButtons = [rockButton, paperButton, scissorsButton];
 const playerScoreElement = document.querySelector('.player-score');
 const computerScoreElement = document.querySelector('.computer-score');
-const resultsElement = document.querySelector('.results');
+const roundResultsElement = document.querySelector('.round-results');
 const gameOverElement = document.querySelector('.game-over')
 const gameResultElement = document.querySelector('.game-result');
 
@@ -28,7 +28,7 @@ const getComputerChoice = () => choices[Math.floor(Math.random() * choices.lengt
 const getPlayerChoice = (e) => e.target.id;
 const updatePlayerScore = () => playerScoreElement.textContent = playerScore;
 const updateComputerScore = () => computerScoreElement.textContent = computerScore;
-const updateResultsElement = (result) => resultsElement.textContent = result;
+const updateResultsElement = (result) => roundResultsElement.textContent = result;
 const disableButtons = () => choiceButtons.forEach(button => button.disabled = true);
 const enableButtons = () => choiceButtons.forEach(button => button.disabled = false);
 
