@@ -8,15 +8,21 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  padding: 5%;
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   align-items: center;
 }
 
 .container {
+  min-width: 400px;
+  height: 300px;
   border: 2px solid black;
   padding: 20px;
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
 
