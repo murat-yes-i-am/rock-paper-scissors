@@ -20,6 +20,7 @@ const getHumanChoice = (e) => e.target.id;
 const updateplayerScore = () => playerScoreElement.textContent = playerScore;
 const updateComputerScore = () => computerScoreElement.textContent = computerScore;
 const updateResultsElement = (result) => resultsElement.textContent = result;
+const disableButtons = () => {};
 
 const playRound = (e) => {
   if (!choices.includes(e.target.id)) {
@@ -50,6 +51,16 @@ const playRound = (e) => {
   }
 
   updateResultsElement(result);
+
+  if (playerScore >= 5) {
+    alert('You win');
+    disableButtons();
+  }
+
+  if (computerScore >= 5) {
+    alert('You lose');
+    disableButtons();
+  }
 }
 
 buttons.addEventListener('click', playRound);
