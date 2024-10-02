@@ -17,14 +17,14 @@ const resultsElement = document.querySelector('.results');
 
 const getComputerChoice = () => choices[Math.floor(Math.random() * choices.length)];
 const getPlayerChoice = (e) => e.target.id;
-const updateplayerScore = () => playerScoreElement.textContent = playerScore;
+const updatePlayerScore = () => playerScoreElement.textContent = playerScore;
 const updateComputerScore = () => computerScoreElement.textContent = computerScore;
 const updateResultsElement = (result) => resultsElement.textContent = result;
 const disableButtons = () => buttons.forEach(button => button.disabled = true);
 
 const playRound = (e) => {
   const computerChoice = getComputerChoice();
-  const playerChoice = getplayerChoice(e);
+  const playerChoice = getPlayerChoice(e);
   let result = '';
 
   switch (true) {
@@ -33,7 +33,7 @@ const playRound = (e) => {
     case (playerChoice === SCISSORS && computerChoice === PAPER):
       result =`You win! ${playerChoice} beats ${computerChoice}`;
       playerScore++;
-      updateplayerScore();
+      updatePlayerScore();
       break;
     case (computerChoice === ROCK && playerChoice === SCISSORS):
     case (computerChoice === PAPER && playerChoice === ROCK):
