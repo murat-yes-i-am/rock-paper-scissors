@@ -21,6 +21,8 @@ const choiceButtons = [rockButton, paperButton, scissorsButton];
 const playerScoreElement = document.querySelector('.player-score');
 const computerScoreElement = document.querySelector('.computer-score');
 const resultsElement = document.querySelector('.results');
+const gameOverElement = document.querySelector('.game-over')
+const gameResultElement = document.querySelector('.game-results');
 
 const getComputerChoice = () => choices[Math.floor(Math.random() * choices.length)];
 const getPlayerChoice = (e) => e.target.id;
@@ -29,6 +31,13 @@ const updateComputerScore = () => computerScoreElement.textContent = computerSco
 const updateResultsElement = (result) => resultsElement.textContent = result;
 const disableButtons = () => choiceButtons.forEach(button => button.disabled = true);
 const enableButtons = () => choiceButtons.forEach(button => button.disabled = false);
+
+const endGame = (message) => {
+  alert(message);
+  gameResultElement.textContent = message;
+  disableButtons();
+  gameOverElement.style.display = 'block';
+}
 
 const playRound = (e) => {
   const computerChoice = getComputerChoice();
@@ -51,7 +60,7 @@ const playRound = (e) => {
       updateComputerScore();
       break;
     default:
-      result = `It\'s a tie. You both chose ${playerChoice}`;
+      result = `It's a tie. You both chose ${playerChoice}`;
   }
 
   updateResultsElement(result);
@@ -68,6 +77,7 @@ const playRound = (e) => {
 }
 
 const reset = () => {
+  gameOverElement.style.display = 'none';
   playerScore = 0;
   computerScore = 0;
   updatePlayerScore();
@@ -77,3 +87,4 @@ const reset = () => {
 }
 
 choiceButtons.forEach(button => button.addEventListener('click', playRound));
+resetButton.addEventListener('click', reset);
