@@ -1,6 +1,8 @@
 const ROCK = 'rock';
 const PAPER = 'paper';
 const SCISSORS = 'scissors';
+const RESET = 'reset';
+
 const choices = [
   ROCK,
   PAPER,
@@ -13,6 +15,7 @@ let computerScore = 0;
 const rockButton = document.getElementById(ROCK);
 const paperButton = document.getElementById(PAPER);
 const scissorsButton = document.getElementById(SCISSORS);
+const resetButton = document.getElementById(RESET);
 
 const choiceButtons = [rockButton, paperButton, scissorsButton];
 const playerScoreElement = document.querySelector('.player-score');
