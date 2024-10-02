@@ -21,6 +21,7 @@ const updatePlayerScore = () => playerScoreElement.textContent = playerScore;
 const updateComputerScore = () => computerScoreElement.textContent = computerScore;
 const updateResultsElement = (result) => resultsElement.textContent = result;
 const disableButtons = () => buttons.forEach(button => button.disabled = true);
+const enableButtons = () => buttons.forEach(button => button.disabled = false);
 
 const playRound = (e) => {
   const computerChoice = getComputerChoice();
@@ -57,6 +58,15 @@ const playRound = (e) => {
     alert('You lose');
     disableButtons();
   }
+}
+
+const reset = () => {
+  playerScore = 0;
+  computerScore = 0;
+  updatePlayerScore();
+  updateComputerScore();
+  updateResultsElement('');
+  enableButtons();
 }
 
 buttons.forEach(button => button.addEventListener('click', playRound));
