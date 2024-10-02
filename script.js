@@ -16,7 +16,7 @@ const computerScoreElement = document.querySelector('.computer-score');
 const resultsElement = document.querySelector('.results');
 
 const getComputerChoice = () => choices[Math.floor(Math.random() * choices.length)];
-const getHumanChoice = (e) => e.target.id;
+const getPlayerChoice = (e) => e.target.id;
 const updateplayerScore = () => playerScoreElement.textContent = playerScore;
 const updateComputerScore = () => computerScoreElement.textContent = computerScore;
 const updateResultsElement = (result) => resultsElement.textContent = result;
@@ -24,26 +24,26 @@ const disableButtons = () => buttons.forEach(button => button.disabled = true);
 
 const playRound = (e) => {
   const computerChoice = getComputerChoice();
-  const humanChoice = getHumanChoice(e);
+  const playerChoice = getplayerChoice(e);
   let result = '';
 
   switch (true) {
-    case (humanChoice === ROCK && computerChoice === SCISSORS):
-    case (humanChoice === PAPER && computerChoice === ROCK):
-    case (humanChoice === SCISSORS && computerChoice === PAPER):
-      result =`You win! ${humanChoice} beats ${computerChoice}`;
+    case (playerChoice === ROCK && computerChoice === SCISSORS):
+    case (playerChoice === PAPER && computerChoice === ROCK):
+    case (playerChoice === SCISSORS && computerChoice === PAPER):
+      result =`You win! ${playerChoice} beats ${computerChoice}`;
       playerScore++;
       updateplayerScore();
       break;
-    case (computerChoice === ROCK && humanChoice === SCISSORS):
-    case (computerChoice === PAPER && humanChoice === ROCK):
-    case (computerChoice === SCISSORS && humanChoice === PAPER):
-      result = `You lose! ${computerChoice} beats ${humanChoice}`;
+    case (computerChoice === ROCK && playerChoice === SCISSORS):
+    case (computerChoice === PAPER && playerChoice === ROCK):
+    case (computerChoice === SCISSORS && playerChoice === PAPER):
+      result = `You lose! ${computerChoice} beats ${playerChoice}`;
       computerScore++;
       updateComputerScore();
       break;
     default:
-      result = 'It\'s a tie';
+      result = `It\'s a tie. You both chose ${playerChoice}`;
   }
 
   updateResultsElement(result);
