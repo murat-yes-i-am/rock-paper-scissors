@@ -7,17 +7,17 @@ const choices = [
   SCISSORS
 ];
 
-let humanScore = 0;
+let playerScore = 0;
 let computerScore = 0;
 
 const buttons = document.querySelector('.buttons');
-const humanScoreElement = document.querySelector('.human-score');
+const playerScoreElement = document.querySelector('.player-score');
 const computerScoreElement = document.querySelector('.computer-score');
 const resultsElement = document.querySelector('.results');
 
 const getComputerChoice = () => choices[Math.floor(Math.random() * choices.length)];
 const getHumanChoice = (e) => e.target.id;
-const updateHumanScore = () => humanScoreElement.textContent = humanScore;
+const updateplayerScore = () => playerScoreElement.textContent = playerScore;
 const updateComputerScore = () => computerScoreElement.textContent = computerScore;
 const updateResultsElement = (result) => resultsElement.textContent = result;
 
@@ -35,8 +35,8 @@ const playRound = (e) => {
     case (humanChoice === PAPER && computerChoice === ROCK):
     case (humanChoice === SCISSORS && computerChoice === PAPER):
       result =`You win! ${humanChoice} beats ${computerChoice}`;
-      humanScore++;
-      updateHumanScore();
+      playerScore++;
+      updateplayerScore();
       break;
     case (computerChoice === ROCK && humanChoice === SCISSORS):
     case (computerChoice === PAPER && humanChoice === ROCK):
